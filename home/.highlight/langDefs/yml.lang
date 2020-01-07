@@ -1,0 +1,23 @@
+
+Description="Yaml"
+
+Keywords = {
+  { Id=1,
+    Regex=[[ ([\w-]+)\s*\: ]]
+  },
+  { Id=4,
+    Regex=[[ ^\-\-\-$ ]]
+  },
+}
+
+Strings={
+  Delimiter=[["|']],
+}
+
+IgnoreCase=false
+
+Comments={
+  { Block=false,
+    Delimiter= { [[#]] }
+  }
+}

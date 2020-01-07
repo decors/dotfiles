@@ -1,0 +1,11 @@
+.config/fish
+.config/fish/functions
+.config/fish/conf.d
+.config/fish/completions
+.config/peco
+.source-highlight
+.vim/syntax
+.vim/ftdetect
+.highlight/langDefs
+.grc
+Library/Application Support/Code/User

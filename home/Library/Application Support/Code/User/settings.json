@@ -1,0 +1,47 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.tabSize": 4,
+    "editor.renderWhitespace": "all",
+
+    "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 13,
+    "editor.fontLigatures": true,
+    "editor.wordWrap": "off",
+
+    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+    "terminal.integrated.fontFamily": "Fira Code",
+
+    "window.zoomLevel": 0,
+
+    "diffEditor.ignoreTrimWhitespace": false,
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/.shards": true
+    },
+
+    "files.autoSave": "off",
+    "files.autoGuessEncoding": true,
+
+    "[fish]": {
+      "files.encoding": "utf8",
+    },
+
+    //-------- git configuration --------
+    "git.enableSmartCommit": true,
+    "git.ignoreLegacyWarning": true,
+
+    //-------- Remote VSCode configuration --------
+    "remote.port": 52698,
+    "remote.onstartup": true,
+    "remote.host": "127.0.0.1",
+    "remote.dontShowPortAlreadyInUseError": false,
+
+    "team.showWelcomeMessage": false,
+
+    "workbench.colorTheme": "Japanesque Sakura",
+}

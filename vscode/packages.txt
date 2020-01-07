@@ -1,0 +1,14 @@
+DavidAnson.vscode-markdownlint
+EditorConfig.EditorConfig
+foxundermoon.shell-format
+junsuzuki.theme-japanesque
+MS-CEINTL.vscode-language-pack-ja
+ms-vscode-remote.remote-containers
+ms-vscode-remote.remote-ssh
+ms-vscode-remote.remote-ssh-edit
+ms-vscode-remote.remote-wsl
+ms-vscode-remote.vscode-remote-extensionpack
+ms-vsts.team
+rebornix.ruby
+skyapps.fish-vscode
+wholroyd.jinja

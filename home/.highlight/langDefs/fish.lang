@@ -1,0 +1,79 @@
+
+Description="Fish"
+
+Identifiers=[[ [a-zA-Z_][\w\-]* ]]
+
+Keywords={
+-- fish statement
+  { Id=1,
+    List={"and", "begin", "break", "case", "continue", "else", "end", "exit", "for", "in", "function",
+"if", "not", "or", "return", "switch", "while"},
+  },
+-- fish builtin commands
+  { Id=2,
+    List={"abbr", "alias", "bg", "bind", "block", "breakpoint", "builtin", "cd", "command", "commandline",
+"complete", "contains", "count", "dirh", "dirs", "echo", "emit", "eval", "exec", "false", "fg", "fish",
+"fish_config", "fish_indent", "fish_prompt", "fish_realpath", "fish_right_prompt", "fish_update_completions",
+"fish_vi_key_bindings", "funced", "funcsave", "functions", "help", "history", "isatty", "jobs", "math",
+"nextd", "open", "popd", "prevd", "printf", "prompt_pwd", "psub", "pushd", "pwd", "random", "read", "set",
+"set_color", "source", "status", "string", "suspend", "test", "trap", "true", "type", "ulimit", "umask",
+"vared"},
+  },
+-- commands
+  { Id=3,
+    List={"ls", "cat", "tac", "rev", "cp", "mv", "rm", "rmdir", "chmod",
+"chattr", "ln", "find", "xargs", "expr", "date", "zdump", "time", "touch", "at",
+"batch", "cal", "sleep", "usleep", "hwclock", "clock", "sort", "tsort", "diff",
+"patch", "diff3", "sdiff", "cmp", "comm", "uniq", "expand", "unexpand", "cat",
+"paste", "join", "head", "tail", "grep", "egrep", "zgrep", "look", "sed", "awk",
+"wc", "tr", "fold", "fmt", "ptx", "col", "column", "colrm", "nl", "pr",
+"gettext", "iconv", "recode", "groff", "lex", "yacc", "tar", "shar", "ar",
+"cpio", "gzip", "bzip2", "compress", "uncompress", "zip", "unzip", "sq", "file",
+"which", "whereis", "whatis", "vdir", "shred", "locate", "slocate", "strings",
+"basename", "dirname", "split", "sum", "cksum", "md5sum", "sha1sum", "uuencode",
+"uudecode", "crypt", "make", "install", "more", "less", "host", "vrfy",
+"nslookup", "dig", "traceroute", "ping", "whois", "finger", "ftp", "uucp",
+"telnet", "rlogin", "rsh", "rcp", "ssh", "write", "mail", "vacation", "tput",
+"reset", "clear", "script", "factor", "bc", "dc", "jot", "seq", "yes", "banner",
+"printenv", "lp", "tee", "mkfifo", "pathchk", "dd", "od", "hexdump", "m4", "logout", "kill"},
+  },
+  { Id=4,
+    Regex=[[\$\{.+?\}]],
+  },
+  { Id=4,
+    Regex=[[ \$[\w\#]+ ]],
+  },
+}
+
+-- hereDoc opening delimiter, see OnStateChange to handle end of string
+Strings={
+  Delimiter=[["|'|`|<<[\-"']?\s*[-\w_]+["']?]],
+}
+
+IgnoreCase=false
+
+Comments={
+  { Block=false,
+    Delimiter= { [[#]] },
+  },
+}
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|\&|<|>|\!|\=|\/|\*|\%|\+|\-]]
+
+function OnStateChange(oldState, newState, token)
+
+   if  (string.sub(token,1,1) =="$" )  and oldState==HL_STRING and newState==HL_KEYWORD then
+      return HL_INTERPOLATION
+   end
+
+   --recognize hereDoc multine strings
+   if oldState==HL_STANDARD and newState==HL_STRING and not string.find("\"'`", token) then
+      hereDoc = string.match(token, "<<%-?'?%s*([%-%a%d_]+)" )
+   end
+   if oldState==HL_STRING and token==hereDoc then
+      hereDoc = nil
+      return HL_STRING_END
+   end
+
+   return newState
+end
