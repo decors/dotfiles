@@ -72,6 +72,11 @@ end
 #    set -x HOMEBREW_GITHUB_API_TOKEN (cat ~/.brew_api_token)
 #end
 
+# Linuxbrew
+if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]
+  eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+end
+
 # Direnv
 if type -fq direnv
     eval (direnv hook fish)
