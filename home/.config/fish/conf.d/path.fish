@@ -36,9 +36,3 @@ end
 if [ -d $HOME/.nodebrew/current/bin ]
   set PATH $PATH $HOME/.nodebrew/current/bin
 end
-
-# rbenvb
-
-if [ -d $HOME/.rbenv/bin ]
-  set PATH $PATH $HOME/.rbenv/bin
-end

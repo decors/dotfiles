@@ -78,6 +78,10 @@ if type -fq direnv
 end
 
 # rbenv
+if [ -d $HOME/.rbenv/bin ]
+  set PATH $PATH $HOME/.rbenv/bin
+end
+
 if type -fq rbenv
     rbenv init - | source
 end
