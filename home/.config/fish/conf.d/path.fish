@@ -1,5 +1,9 @@
 # path.fish
 
+if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]
+  eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+end
+
 if type -fq brew
 
   set -l brew_prefix (brew --prefix)
