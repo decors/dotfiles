@@ -1,6 +1,6 @@
 # path.fish
 
-if type -fq brew 
+if type -fq brew
 
   set -l brew_prefix (brew --prefix)
 
@@ -35,4 +35,10 @@ end
 # nodebrew
 if [ -d $HOME/.nodebrew/current/bin ]
   set PATH $PATH $HOME/.nodebrew/current/bin
+end
+
+# rbenvb
+
+if [ -d $HOME/.rbenv/bin ]
+  set PATH $PATH $HOME/.rbenv/bin
 end
