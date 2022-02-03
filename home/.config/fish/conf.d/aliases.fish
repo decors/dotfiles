@@ -28,3 +28,7 @@ end
 if type -qf pinfo
     alias info='pinfo'
 end
+
+if type -qf exa
+  alias ls="exa"
+end

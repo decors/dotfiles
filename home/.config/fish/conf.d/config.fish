@@ -58,7 +58,7 @@ set -x FZF_DEFAULT_OPTS '--bind ctrl-f:page-down,ctrl-b:page-up --ansi --no-sort
 
 # ghq
 set -g GHQ_SELECTOR fzf
-set -g GHQ_SELECTOR_OPTS '--prompt="ghq> "'
+set -g GHQ_SELECTOR_OPTS '--prompt=ghq> '
 
 # Homebrew
 #if type -fq mate
