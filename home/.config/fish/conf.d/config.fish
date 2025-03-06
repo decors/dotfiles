@@ -61,20 +61,9 @@ set -g GHQ_SELECTOR fzf
 set -g GHQ_SELECTOR_OPTS '--prompt=ghq> '
 
 # Homebrew
-#if type -fq mate
-#    set -x HOMEBREW_EDITOR (which mate)
-#end
 set -x HOMEBREW_CASK_OPTS "--appdir=/Applications"
-if [ -d /usr/local/sbin ]
-    set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
-end
-#if [ -f ~/.brew_api_token ]
-#    set -x HOMEBREW_GITHUB_API_TOKEN (cat ~/.brew_api_token)
-#end
-
-# Linuxbrew
-if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]
-  eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+if [ -d /opt/homebrew/bin ]
+    set -g fish_user_paths "/opt/homebrew/bin" $fish_user_paths
 end
 
 # Direnv
@@ -88,7 +77,7 @@ if [ -d $HOME/.rbenv/bin ]
 end
 
 if type -fq rbenv
-    rbenv init - | source
+    status --is-interactive; and rbenv init - fish | source
 end
 
 # venv

@@ -44,4 +44,13 @@
     "team.showWelcomeMessage": false,
 
     "workbench.colorTheme": "Japanesque Sakura",
+    "security.workspace.trust.untrustedFiles": "open",
+    "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "workbench.startupEditor": "none",
+    "html.format.preserveNewLines": false,
+    "html.format.unformatted": "null",
+    "html.format.extraLiners": "head, body, /html",
 }
+ß

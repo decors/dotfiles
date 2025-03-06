@@ -1,5 +1,7 @@
 # .bash_profile
 
+export PATH="$PATH:/opt/homebrew/bin"
+
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc

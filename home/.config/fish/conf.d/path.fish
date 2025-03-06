@@ -15,7 +15,6 @@ if type -fq brew
       set -g -x LDFLAGS "-L$brew_prefix/opt/llvm/lib -Wl,-rpath,$brew_prefix/opt/llvm/lib"
   end
 
-
   # Google Cloud sdk
   if [ -f $brew_prefix/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc ]
       . $brew_prefix/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
